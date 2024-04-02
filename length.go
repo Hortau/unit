@@ -132,6 +132,18 @@ func (l Length) Decimeters() float64 {
 	return float64(l / Decimeter)
 }
 
+func FromMeters(val float64) Value {
+	return Value{val, length}
+}
+
+// toCentimeters return the converted value
+func toMeters(value Value) (float64, error) {
+	if value.unit != length {
+		return 0, ErrConversion
+	}
+	return Length(value.val).Meters(), nil
+}
+
 // Meters returns the length in m
 func (l Length) Meters() float64 {
 	return float64(l)
