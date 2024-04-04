@@ -51,11 +51,11 @@ const (
 	Zettabar = Bar * 1e21
 	Yottabar = Bar * 1e24
 
-	Atmosphere         = Pascal * 1.01325 * 1e5
-	TechAtmosphere     = Pascal * 9.80665 * 1e4
-	Torr               = Pascal * 133.3224
-	PoundPerSquareInch = Pascal * 6894.757
-	InchOfMercury      = Pascal * 3386.389
+	Atmosphere          = Pascal * 1.01325 * 1e5
+	TechAtmosphere      = Pascal * 9.80665 * 1e4
+	Torr                = Pascal * 133.3224
+	PoundsPerSquareInch = Pascal * 6.8948 * 1e3
+	InchOfMercury       = Pascal * 3386.389
 )
 
 // Yoctopascals returns the pressure in yPa
@@ -298,7 +298,7 @@ func (p Pressure) Torrs() float64 {
 
 // FromPoundsPerSquareInch return the value to be converted
 func FromPoundsPerSquareInch(val float64) Value {
-	return Value{val * float64(PoundPerSquareInch), pressure}
+	return Value{val * float64(PoundsPerSquareInch), pressure}
 }
 
 // toPoundsPerSquareInch return the converted value
@@ -311,23 +311,23 @@ func toPoundsPerSquareInch(value Value) (float64, error) {
 
 // PoundsPerSquareInch returns the pressure in psi
 func (p Pressure) PoundsPerSquareInch() float64 {
-	return float64(p / PoundPerSquareInch)
+	return float64(p / PoundsPerSquareInch)
 }
 
-// FromInchesOfMercury return the value to be converted
-func FromInchesOfMercury(val float64) Value {
+// FromInchOfMercury return the value to be converted
+func FromInchOfMercury(val float64) Value {
 	return Value{val * float64(InchOfMercury), pressure}
 }
 
-// toInchesOfMercury return the converted value
-func toInchesOfMercury(value Value) (float64, error) {
+// toInchOfMercury return the converted value
+func toInchOfMercury(value Value) (float64, error) {
 	if value.unit != pressure {
 		return 0, ErrConversion
 	}
-	return Pressure(value.val).InchesOfMercury(), nil
+	return Pressure(value.val).InchOfMercury(), nil
 }
 
-// InchesOfMercury returns the pressure in in-hg
-func (p Pressure) InchesOfMercury() float64 {
+// InchOfMercury returns the pressure in inch of mercury
+func (p Pressure) InchOfMercury() float64 {
 	return float64(p / InchOfMercury)
 }

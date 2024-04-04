@@ -28,6 +28,8 @@ const (
 	Exameter                = Meter * 1e18
 	Zettameter              = Meter * 1e21
 	Yottameter              = Meter * 1e24
+	Ronnameter              = Meter * 1e27
+	Quettameter             = Meter * 1e30
 
 	// US
 	Inch    = Meter * 0.0254
@@ -49,6 +51,9 @@ const (
 	LunarDistance    = Kilometer * 384400
 	AstronomicalUnit = Meter * 149597870700
 	LightYear        = Meter * 9460730472580800
+
+	// chemistry
+	Angstrom = Meter * 1e-10
 )
 
 // Yoctometers returns the length in ym
@@ -200,6 +205,16 @@ func (l Length) Yottameters() float64 {
 	return float64(l / Yottameter)
 }
 
+// Ronnameters returns the length in in Rm
+func (l Length) Ronnameters() float64 {
+	return float64(l / Ronnameter)
+}
+
+// Quettameters returns the length in in Qm
+func (l Length) Quettameters() float64 {
+	return float64(l / Quettameter)
+}
+
 // FromInches return the value to be converted
 func FromInches(val float64) Value {
 	return Value{val * float64(Inch), length}
@@ -299,4 +314,9 @@ func (l Length) AstronomicalUnits() float64 {
 // LightYears returns the length in ly
 func (l Length) LightYears() float64 {
 	return float64(l / LightYear)
+}
+
+// Angstroms returns the length in A
+func (l Length) Angstroms() float64 {
+	return float64(l / Angstrom)
 }
