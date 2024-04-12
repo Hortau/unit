@@ -1,5 +1,5 @@
 # About
-
+[![codecov](https://codecov.io/gh/Hortau/unit/graph/badge.svg?token=7DEKCHwiZf)](https://codecov.io/gh/Hortau/unit)
 [![GoDoc](https://godoc.org/github.com/hortau/unit?status.svg)](https://godoc.org/github.com/hortau/unit)
 
 Conversion of unit library for golang
