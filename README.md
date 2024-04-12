@@ -1,7 +1,5 @@
 # About
 
-[![Travis-CI](https://api.travis-ci.org/hortau/unit.svg)](https://travis-ci.org/hortau/unit)
-[![Coverage Status](https://coveralls.io/repos/github/Hortau/unit/badge.svg?branch=master)](https://coveralls.io/github/Hortau/unit?branch=master)
 [![GoDoc](https://godoc.org/github.com/hortau/unit?status.svg)](https://godoc.org/github.com/hortau/unit)
 
 Conversion of unit library for golang
