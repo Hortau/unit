@@ -32,6 +32,7 @@ const (
 	temperature
 	voltage
 	volume
+	degreeDays
 )
 
 var (

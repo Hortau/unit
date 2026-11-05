@@ -5,6 +5,8 @@ import (
 )
 
 func TestTemperature(t *testing.T) {
+	assertFloatEqual(t, 32, CelsiusToFahrenheit(0))
+	assertFloatEqual(t, 0, FahrenheitToCelsius(32))
 	assertFloatEqual(t, 212, CelsiusToFahrenheit(100))
 	assertFloatEqual(t, 37.77777777777778, FahrenheitToCelsius(100))
 
