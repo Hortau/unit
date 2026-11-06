@@ -57,9 +57,12 @@ func TestPressure(t *testing.T) {
 	assertFloatEqual(t, 1e-3, (1 * Zettabar).Yottabars())
 
 	// misc
+	assertFloatEqual(t, 101325, (1 * Atmosphere).Pascals())
 	assertFloatEqual(t, 0.09869232667160129, (10000 * Pascal).Atmospheres())
 	assertFloatEqual(t, 0.10197162129779283, (10000 * Pascal).TechAtmospheres())
-	assertFloatEqual(t, 75.00615050434136, (10000 * Pascal).Torrs())
+	assertFloatEqual(t, 101325.0/760.0, (1 * Torr).Pascals())
+	assertFloatEqual(t, 760, (1 * Atmosphere).Torrs())
+	assertFloatEqual(t, 10000.0*760.0/101325.0, (10000 * Pascal).Torrs())
 	assertFloatEqual(t, 1.4503683935719673, (10000 * Pascal).PoundsPerSquareInch())
 	assertFloatEqual(t, 2.9529980164712323, (10000 * Pascal).InchOfMercury())
 }

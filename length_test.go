@@ -31,6 +31,9 @@ func TestLength(t *testing.T) {
 	assertFloatEqual(t, 1e-3, (1 * Petameter).Exameters())
 	assertFloatEqual(t, 1e-3, (1 * Exameter).Zettameters())
 	assertFloatEqual(t, 1e-3, (1 * Zettameter).Yottameters())
+	assertFloatEqual(t, 1e-3, (1 * Yottameter).Ronnameters())
+	assertFloatEqual(t, 1e-3, (1 * Ronnameter).Quettameters())
+	assertFloatEqual(t, 1e3, (1 * Quettameter).Ronnameters())
 
 	// US
 	assertFloatEqual(t, 0.3048, (1 * Foot).Meters())
@@ -44,6 +47,8 @@ func TestLength(t *testing.T) {
 	assertFloatEqual(t, 0.25, (1 * Rod).Chains())
 	assertFloatEqual(t, 25., (1 * Rod).Links())
 	assertFloatEqual(t, 0.1, (1 * Chain).Furlongs())
+	assertFloatEqual(t, 5280, (1 * Mile).Feet())
+	assertFloatEqual(t, 1609.344, (1 * Mile).Meters())
 	assertFloatEqual(t, 12.5, (100 * Furlong).Miles())
 	assertFloatEqual(t, 54.6806649168854, (100 * Meter).Fathoms())
 	assertFloatEqual(t, 0.5399568034557236, (100 * Meter).Cables())

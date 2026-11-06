@@ -30,6 +30,9 @@ func TestMass(t *testing.T) {
 	assertFloatEqual(t, 1e-3, (1 * Petagram).Exagrams())
 	assertFloatEqual(t, 1e-3, (1 * Exagram).Zettagrams())
 	assertFloatEqual(t, 1e-3, (1 * Zettagram).Yottagrams())
+	assertFloatEqual(t, 1e-3, (1 * Yottagram).Ronnagrams())
+	assertFloatEqual(t, 1e-3, (1 * Ronnagram).Quettagrams())
+	assertFloatEqual(t, 1e3, (1 * Quettagram).Ronnagrams())
 
 	// non-SI
 	assertFloatEqual(t, 1e-3, (1 * Kilogram).Tonnes())

@@ -68,7 +68,7 @@ func toKilobits(value Value) (float64, error) {
 	return Datasize(value.val).Kilobits(), nil
 }
 
-// Kilobits returns the datasize in Kb (bit)
+// Kilobits returns the datasize in kbit
 func (b Datasize) Kilobits() float64 {
 	return float64(b / Kilobit)
 }
@@ -86,37 +86,37 @@ func toMegabits(value Value) (float64, error) {
 	return Datasize(value.val).Megabits(), nil
 }
 
-// Megabits returns the datasize in Mb (bit)
+// Megabits returns the datasize in Mbit
 func (b Datasize) Megabits() float64 {
 	return float64(b / Megabit)
 }
 
-// Gigabits returns the datasize in Gb (bit)
+// Gigabits returns the datasize in Gbit
 func (b Datasize) Gigabits() float64 {
 	return float64(b / Gigabit)
 }
 
-// Terabits returns the datasize in Tb (bit)
+// Terabits returns the datasize in Tbit
 func (b Datasize) Terabits() float64 {
 	return float64(b / Terabit)
 }
 
-// Petabits returns the datasize in Pb (bit)
+// Petabits returns the datasize in Pbit
 func (b Datasize) Petabits() float64 {
 	return float64(b / Petabit)
 }
 
-// Exabits returns the datasize in Eb (bit)
+// Exabits returns the datasize in Ebit
 func (b Datasize) Exabits() float64 {
 	return float64(b / Exabit)
 }
 
-// Zettabits returns the datasize in Zb (bit)
+// Zettabits returns the datasize in Zbit
 func (b Datasize) Zettabits() float64 {
 	return float64(b / Zettabit)
 }
 
-// Yottabits returns the datasize in Yb (bit)
+// Yottabits returns the datasize in Ybit
 func (b Datasize) Yottabits() float64 {
 	return float64(b / Yottabit)
 }
@@ -181,7 +181,7 @@ func (b Datasize) Ronnabytes() float64 {
 	return float64(b / Ronnabyte)
 }
 
-// Quettabytes returns the datasize in RB
+// Quettabytes returns the datasize in QB
 func (b Datasize) Quettabytes() float64 {
 	return float64(b / Quettabyte)
 }

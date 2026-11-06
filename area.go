@@ -29,21 +29,17 @@ const (
 	SquareYottameter      = SquareMeter * 1e48
 
 	// US
-	SquareInch = SquareMeter * 0.00064516
+	SquareInch = SquareMeter * Area(Inch*Inch)
 	SquareFoot = SquareInch * 144
 	SquareYard = SquareFoot * 9
 	Acre       = SquareYard * 4840
 	SquareMile = Acre * 640
 
-	// TW
-	//1坪(twPing)= 3.30579 平方公尺
-	//1公頃(hectare,twGongQing)= 10000 平方公尺
-	//1甲(twJia)= 2934*3.30579 平方公尺
-	//1分(twFen)= 293.4*3.30579 平方公尺
+	// Taiwanese units; multiply before dividing to avoid integer division.
 	TWGongQing = SquareMeter * 10000
-	TWPing     = SquareMeter / 3.30579
-	TWFen      = SquareMeter / (293.4 * 3.30579)
-	TWJia      = SquareMeter / (2934 * 3.30579)
+	TWPing     = SquareMeter * 400 / 121
+	TWFen      = SquareMeter * 117360 / 121
+	TWJia      = SquareMeter * 1173600 / 121
 
 	// imperial
 	SquareRod = SquareFoot * 272.25

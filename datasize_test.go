@@ -16,6 +16,9 @@ func TestDatasize(t *testing.T) {
 	assertFloatEqual(t, 1e-3, (1 * Petabit).Exabits())
 	assertFloatEqual(t, 1e-3, (1 * Exabit).Zettabits())
 	assertFloatEqual(t, 1e-3, (1 * Zettabit).Yottabits())
+	assertFloatEqual(t, 1e-3, (1 * Yottabit).Ronnabits())
+	assertFloatEqual(t, 1e-3, (1 * Ronnabit).Quettabits())
+	assertFloatEqual(t, 1e3, (1 * Quettabit).Ronnabits())
 
 	assertFloatEqual(t, 0.125, (1 * Bit).Bytes())
 	assertFloatEqual(t, 1e0, (1 * Byte).Bytes())
@@ -28,6 +31,9 @@ func TestDatasize(t *testing.T) {
 	assertFloatEqual(t, 1e-3, (1 * Petabyte).Exabytes())
 	assertFloatEqual(t, 1e-3, (1 * Exabyte).Zettabytes())
 	assertFloatEqual(t, 1e-3, (1 * Zettabyte).Yottabytes())
+	assertFloatEqual(t, 1e-3, (1 * Yottabyte).Ronnabytes())
+	assertFloatEqual(t, 1e-3, (1 * Ronnabyte).Quettabytes())
+	assertFloatEqual(t, 1e3, (1 * Quettabyte).Ronnabytes())
 
 	// base 2 (IEC prefixes)
 	assertFloatEqual(t, 0.0009765625, (1 * Bit).Kibibits())

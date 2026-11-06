@@ -6,10 +6,10 @@ type Speed Unit
 // ...
 const (
 	MetersPerSecond   Speed = 1e0
-	KilometersPerHour       = MetersPerSecond * 0.277778
+	KilometersPerHour       = MetersPerSecond * (1000.0 / 3600.0)
 	FeetPerSecond           = MetersPerSecond * 0.3048
 	MilesPerHour            = MetersPerSecond * 0.44704
-	Knot                    = MetersPerSecond * 0.514444
+	Knot                    = MetersPerSecond * (1852.0 / 3600.0)
 	SpeedOfLight            = MetersPerSecond * 299792458
 )
 
