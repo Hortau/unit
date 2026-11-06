@@ -32,6 +32,7 @@ func TestArea(t *testing.T) {
 	assertFloatEqual(t, 1e-6, (1 * SquareZettameter).SquareYottameters())
 
 	// US
+	assertFloatEqual(t, 0.00064516, (1 * SquareInch).SquareMeters())
 	assertFloatEqual(t, 10.763910416709724, (1 * SquareMeter).SquareFeet())
 	assertFloatEqual(t, 144.0, (1 * SquareFoot).SquareInches())
 	assertFloatEqual(t, 9.0, (1 * SquareYard).SquareFeet())
@@ -49,4 +50,29 @@ func TestArea(t *testing.T) {
 	assertFloatEqual(t, 1.0, (1 * SquareDecameter).Ares())
 	assertFloatEqual(t, 1.0, (1 * SquareHectometer).Hectares())
 	assertFloatEqual(t, 1.0, (1 * SquarePerch).SquareRods())
+}
+
+func TestTaiwaneseAreas(t *testing.T) {
+	tests := []struct {
+		name           string
+		unit           Area
+		squareMeters   float64
+		perSquareMeter float64
+	}{
+		{"gong qing", TWGongQing, 10000, 1.0 / 10000.0},
+		{"ping", TWPing, 400.0 / 121.0, 121.0 / 400.0},
+		{"fen", TWFen, 117360.0 / 121.0, 121.0 / 117360.0},
+		{"jia", TWJia, 1173600.0 / 121.0, 121.0 / 1173600.0},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assertFloatEqual(t, tt.squareMeters, tt.unit.SquareMeters())
+			assertFloatEqual(t, tt.perSquareMeter, float64(SquareMeter/tt.unit))
+			assertFloatEqual(t, 2.5*tt.squareMeters, (2.5 * tt.unit).SquareMeters())
+		})
+	}
+
+	assertFloatEqual(t, 293.4, float64(TWFen/TWPing))
+	assertFloatEqual(t, 10, float64(TWJia/TWFen))
+	assertFloatEqual(t, 1173600.0/121.0/10000.0, (1 * TWJia).Hectares())
 }

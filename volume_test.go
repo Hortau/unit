@@ -59,6 +59,9 @@ func TestVolume(t *testing.T) {
 	assertFloatEqual(t, 1e-9, (1 * CubicZettameter).CubicYottameters())
 
 	// US
+	assertFloatEqual(t, 16.387064, (1 * CubicInch).Milliliters())
+	assertFloatEqual(t, 0.028316846592, (1 * CubicFoot).CubicMeters())
+	assertFloatEqual(t, 3.785411784, (1 * USLiquidGallon).Liters())
 	assertFloatEqual(t, 1728.0, (1 * CubicFoot).CubicInches())
 	assertFloatEqual(t, 1e0, (1 * CubicFoot).CubicFeet())
 	assertFloatEqual(t, 0.037037037037037035, (1 * CubicFoot).CubicYards())
