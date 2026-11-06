@@ -2,7 +2,7 @@ package unit
 
 import "fmt"
 
-func ExampleFoot_Meters() {
+func ExampleLength_Meters_feet() {
 	ft := 1 * Foot
 	fmt.Println(ft.Feet(), "feet is", ft.Meters(), "meters")
 	// Output: 1 feet is 0.30479999999999996 meters
